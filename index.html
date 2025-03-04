@@ -3,32 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Keren</title>
+    <title>Jose Programmer - Portofolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 class="judul">Halo, Saya <span class="highlight">Joo</span> Developer!</h1>
-    </header>
-
-    <section class="content">
-        <div class="about">
-            <h2>Tentang Saya</h2>
-            <p>Saya adalah seorang developer berpengalaman dalam HTML, CSS, JavaScript, dan pengembangan website profesional.</p>
+    <div class="hero">
+        <div class="profile-container">
+            <img src="https://files.catbox.moe/o6ggnz.jpg" alt="Jose" class="profile">
         </div>
+        <h1 id="typing-text"></h1>
+        <p class="desc">Saya adalah developer website dan script! Termuda, saya hanya ingin belajar bukan mengajar.</p>
+        <button class="start-btn" onclick="scrollToSection('video-section')">Start</button>
+    </div>
 
-        <div class="portfolio">
-            <h2>Proyek Saya</h2>
-            <ul>
-                <li><strong>Website E-Commerce</strong> - JooCloud</li>
-                <li><strong>Website Anime</strong> - Jose Wibuboy!</li>
-                <li><strong>Website Pengecekan</strong> - JooCode Security!</li>
-            </ul>
+    <section id="video-section" class="video-container">
+        <video autoplay loop muted>
+            <source src="https://files.catbox.moe/pfkt91.gif" type="video/mp4">
+        </video>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Saya adalah programmer muda, saya berusia 12 tahun.</p>
+        <p>Saya menguasai Javascript, HTML, Python, dan telah membuat banyak website serta mengembangkan bot WhatsApp.</p>
+    </section>
+
+    <section id="social">
+        <h2>Social Media</h2>
+        <div class="social-buttons">
+            <a href="https://www.instagram.com/josetimoo?igsh=MXFqczR1cGU3dHYzMA==" class="btn">Instagram</a>
+            <a href="https://www.tiktok.com/@joo.se1" class="btn">TikTok</a>
+            <a href="https://github.com/Joodev65" class="btn">GitHub</a>
+            <a href="mailto:joomodz5@gmail.com" class="btn">Email</a>
         </div>
     </section>
 
-    <!-- Hu Tao Bergerak -->
-    <img src="https://files.catbox.moe/q9ht27.gif" id="hutao">
+    <section id="stats">
+        <h2>Skills & Tools</h2>
+        <div class="stats-buttons">
+            <span class="btn">C++</span>
+            <span class="btn">Java</span>
+            <span class="btn">HTML</span>
+            <span class="btn">JavaScript</span>
+            <span class="btn">Cloudflare</span>
+            <span class="btn">Vercel</span>
+            <span class="btn">Netlify</span>
+            <span class="btn">Vultr</span>
+            <span class="btn">Nginx</span>
+            <span class="btn">Adobe Photoshop</span>
+        </div>
+    </section>
+
+    <section id="info">
+        <h2>Informasi</h2>
+        <p>Saya adalah developer web dan script berumur 13 tahun yang bersedia menerima kritik dari para senior.</p>
+    </section>
 
     <script src="script.js"></script>
 </body>
