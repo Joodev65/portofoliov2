@@ -1,0 +1,67 @@
+/* Warna utama */
+:root {
+    --primary-color: #007bff;
+    --background-color: #0a192f;
+    --text-color: #e0e0e0;
+    --highlight-color: #00d4ff;
+}
+
+/* Reset & Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Judul */
+.judul {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: var(--highlight-color);
+}
+
+/* Konten */
+.content {
+    padding: 40px;
+}
+
+.about, .portfolio {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+}
+
+/* Hu Tao Bergerak */
+#hutao {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    width: 200px;
+    height: auto;
+    z-index: 100;
+    animation: float 2.5s infinite ease-in-out;
+}
+
+/* Animasi Gerakan */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
