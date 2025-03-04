@@ -124,8 +124,16 @@ section {
     transition: 0.3s;
 }
 
+
 .stats-buttons .btn:hover {
     background: yellow;
+}
+
+.anime-art {
+    width: 300px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px cyan;
 }
 
 /* Responsiveness */
