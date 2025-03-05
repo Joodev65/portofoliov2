@@ -3,65 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose Programmer - Portfolio</title>
+    <title>Jose Anime Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Bagian Utama -->
-    <section id="home" class="hero">
-        <div class="profile">
-            <img src="https://files.catbox.moe/o6ggnz.jpg" alt="Jose Programmer" class="profile-pic">
-            <div class="neon-ring"></div>
-        </div>
-        <h1 class="typing">Jose Programmer</h1>
-        <p class="description">Saya adalah developer website dan script! Termuda, saya hanya ingin belajar bukan mengajar</p>
-        <button class="start-btn" onclick="scrollToSection('about')">Start</button>
-        <button class="audio-btn" onclick="playAudio()">Play Audio</button>
-        <audio id="bg-audio" src="https://files.catbox.moe/2pqzab.mp3"></audio>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section">
-        <h2>Tentang Saya</h2>
-        <p>Saya adalah programmer muda berusia 13 Tahun.</p>
-        <p>Saya menguasai Javascript, HTML, Python, dan telah membuat berbagai website serta bot WhatsApp.</p>
-        <img src="https://files.catbox.moe/ymv0hq.png" alt="Anime Art" class="anime-art">
-    </section>
-
-    <!-- Social Media -->
-    <section id="social" class="section">
-        <h2>Social Media</h2>
-        <div class="buttons">
-            <a href="https://www.instagram.com/josetimoo" target="_blank" class="btn">Instagram</a>
-            <a href="https://www.tiktok.com/@joo.se1" target="_blank" class="btn">TikTok</a>
-            <a href="https://github.com/Joodev65" target="_blank" class="btn">GitHub</a>
-            <a href="mailto:joomodz5@gmail.com" class="btn">Email</a>
-        </div>
-    </section>
-
-    <!-- Statistik -->
-    <section id="stats" class="section">
-        <h2>Keahlian Saya</h2>
-        <div class="buttons">
-            <button class="btn">C++</button>
-            <button class="btn">Java</button>
-            <button class="btn">HTML</button>
-            <button class="btn">JavaScript</button>
-            <button class="btn">Cloudflare</button>
-            <button class="btn">Vercel</button>
-            <button class="btn">Netlify</button>
-            <button class="btn">Vultr</button>
-            <button class="btn">Nginx</button>
-            <button class="btn">Adobe Photoshop</button>
-        </div>
-    </section>
-
-    <!-- Informasi -->
-    <section id="info" class="section">
-        <h2>Informasi</h2>
-        <p>Saya adalah developer web dan script berumur 13 Tahun yang bersedia menerima kritik dari para senior. Mohon maaf jika ada kesalahan.</p>
-    </section>
+    <header>
+        <h1>Jose Anime Tracker</h1>
+    </header>
+    
+    <main>
+        <section id="add-anime">
+            <h2>Tambah Anime</h2>
+            <input type="text" id="anime-name" placeholder="Nama Anime">
+            <select id="anime-status">
+                <option value="Belum Ditonton">Belum Ditonton</option>
+                <option value="Sedang Ditonton">Sedang Ditonton</option>
+                <option value="Selesai">Selesai</option>
+            </select>
+            <button onclick="addAnime()">Tambah</button>
+        </section>
+        
+        <section id="anime-list">
+            <h2>Daftar Anime</h2>
+            <ul id="anime-container"></ul>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
