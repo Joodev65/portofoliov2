@@ -3,32 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose Anime Tracker</title>
+    <title>Jose DevHub - Forum Programmer Muda</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Jose Anime Tracker</h1>
-    </header>
-    
-    <main>
-        <section id="add-anime">
-            <h2>Tambah Anime</h2>
-            <input type="text" id="anime-name" placeholder="Nama Anime">
-            <select id="anime-status">
-                <option value="Belum Ditonton">Belum Ditonton</option>
-                <option value="Sedang Ditonton">Sedang Ditonton</option>
-                <option value="Selesai">Selesai</option>
-            </select>
-            <button onclick="addAnime()">Tambah</button>
-        </section>
-        
-        <section id="anime-list">
-            <h2>Daftar Anime</h2>
-            <ul id="anime-container"></ul>
-        </section>
-    </main>
 
-    <script src="script.js"></script>
+    <!-- Halaman Verifikasi -->
+    <div id="verification">
+        <h2>Are You Human?</h2>
+        <p>Tunggu <span id="countdown">20</span> detik sebelum masuk ke forum.</p>
+    </div>
+
+    <!-- Konten Forum -->
+    <div id="content" class="hidden">
+        <header>
+            <h1>Jose DevHub</h1>
+            <p>Forum Programmer Muda - Belajar & Berbagi</p>
+        </header>
+
+        <nav>
+            <a href="#">Beranda</a>
+            <a href="#">Kategori</a>
+            <a href="#">Tutorial</a>
+            <a href="#">Profil</a>
+        </nav>
+
+        <main>
+            <section id="new-post">
+                <h2>Buat Postingan Baru</h2>
+                <input type="text" id="username" placeholder="Nama Anda">
+                <textarea id="post-content" placeholder="Tulis sesuatu..."></textarea>
+                <button onclick="addPost()">Kirim</button>
+            </section>
+
+            <section id="forum">
+                <h2>Diskusi Terbaru</h2>
+                <div id="post-list">
+                    <!-- Postingan akan muncul di sini -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Jose DevHub. Semua hak dilindungi.</p>
+        </footer>
+    </div>
+
 </body>
 </html>
