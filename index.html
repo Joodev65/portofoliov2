@@ -3,52 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose DevHub - Forum Programmer Muda</title>
+    <title>Jose Photobooth!</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-
-    <!-- Halaman Verifikasi -->
-    <div id="verification">
-        <h2>Are You Human?</h2>
-        <p>Tunggu <span id="countdown">20</span> detik sebelum masuk ke forum.</p>
+    <div class="container">
+        <h1>📸 Jose Photobooth! 💖</h1>
+        <video id="camera" autoplay></video>
+        <button id="capture">📷 Photo</button>
+        <div class="photo-container">
+            <h3>Foto Tersimpan:</h3>
+            <div id="photo-list"></div>
+        </div>
+        <div class="options">
+            <h3>Pilih Bingkai</h3>
+            <div class="frames">
+                <button class="frame-btn" data-color="pink">Pink</button>
+                <button class="frame-btn" data-color="blue">Biru</button>
+                <button class="frame-btn" data-color="purple">Ungu</button>
+            </div>
+            <h3>Pilih Bentuk</h3>
+            <div class="shapes">
+                <button class="shape-btn" data-shape="heart">❤️ Love</button>
+                <button class="shape-btn" data-shape="circle">🔵 Bulat</button>
+            </div>
+            <h3>Pilih Filter</h3>
+            <div class="filters">
+                <button class="filter-btn" data-filter="softpink">Soft Pink</button>
+                <button class="filter-btn" data-filter="vintage">Vintage</button>
+            </div>
+            <button id="save">💾 Simpan Foto</button>
+        </div>
     </div>
-
-    <!-- Konten Forum -->
-    <div id="content" class="hidden">
-        <header>
-            <h1>Jose DevHub</h1>
-            <p>Forum Programmer Muda - Belajar & Berbagi</p>
-        </header>
-
-        <nav>
-            <a href="#">Beranda</a>
-            <a href="#">Kategori</a>
-            <a href="#">Tutorial</a>
-            <a href="#">Profil</a>
-        </nav>
-
-        <main>
-            <section id="new-post">
-                <h2>Buat Postingan Baru</h2>
-                <input type="text" id="username" placeholder="Nama Anda">
-                <textarea id="post-content" placeholder="Tulis sesuatu..."></textarea>
-                <button onclick="addPost()">Kirim</button>
-            </section>
-
-            <section id="forum">
-                <h2>Diskusi Terbaru</h2>
-                <div id="post-list">
-                    <!-- Postingan akan muncul di sini -->
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2025 Jose DevHub. Semua hak dilindungi.</p>
-        </footer>
-    </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
