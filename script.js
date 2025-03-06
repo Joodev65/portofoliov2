@@ -1,30 +1,82 @@
-// Countdown Verifikasi
-let timeLeft = 20;
-let countdown = document.getElementById("countdown");
+const video = document.getElementById('camera');
+const captureBtn = document.getElementById('capture');
+const photoList = document.getElementById('photo-list');
+const frameBtns = document.querySelectorAll('.frame-btn');
+const shapeBtns = document.querySelectorAll('.shape-btn');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const saveBtn = document.getElementById('save');
 
-let timer = setInterval(() => {
-    timeLeft--;
-    countdown.innerText = timeLeft;
-    if (timeLeft <= 0) {
-        clearInterval(timer);
-        document.getElementById("verification").style.display = "none";
-        document.getElementById("content").classList.remove("hidden");
-    }
-}, 1000);
+let photos = [];
+let selectedFrame = 'pink';
+let selectedShape = 'square';
+let selectedFilter = 'none';
 
-// Fungsi Menambahkan Postingan
-function addPost() {
-    let username = document.getElementById("username").value;
-    let content = document.getElementById("post-content").value;
+// Aktifkan kamera
+navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+        video.srcObject = stream;
+    })
+    .catch(err => {
+        alert("Kamera tidak bisa diakses!");
+    });
 
-    if (username.trim() === "" || content.trim() === "") return;
+// Ambil Foto
+captureBtn.addEventListener('click', () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    let postList = document.getElementById("post-list");
-    let newPost = document.createElement("div");
-    newPost.classList.add("post");
-    newPost.innerHTML = `<strong>${username}:</strong> <p>${content}</p>`;
+    let img = new Image();
+    img.src = canvas.toDataURL('image/png');
+    img.style.border = `5px solid ${selectedFrame}`;
+    img.style.borderRadius = selectedShape === 'circle' ? '50%' : '0';
+    img.classList.add(selectedFilter);
 
-    postList.prepend(newPost);
-    document.getElementById("username").value = "";
-    document.getElementById("post-content").value = "";
-}
+    photoList.appendChild(img);
+    photos.push(img);
+});
+
+// Pilih Bingkai
+frameBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        selectedFrame = btn.dataset.color;
+    });
+});
+
+// Pilih Bentuk
+shapeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        selectedShape = btn.dataset.shape;
+    });
+});
+
+// Pilih Filter
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        selectedFilter = btn.dataset.filter;
+    });
+});
+
+// Simpan Foto
+saveBtn.addEventListener('click', () => {
+    const combinedCanvas = document.createElement('canvas');
+    const ctx = combinedCanvas.getContext('2d');
+    
+    const width = 300;
+    const height = 300 * photos.length;
+    combinedCanvas.width = width;
+    combinedCanvas.height = height;
+
+    photos.forEach((photo, index) => {
+        const img = new Image();
+        img.src = photo.src;
+        ctx.drawImage(img, 0, index * 300, width, 300);
+    });
+
+    const link = document.createElement('a');
+    link.download = 'JosePhotobooth.png';
+    link.href = combinedCanvas.toDataURL();
+    link.click();
+});
