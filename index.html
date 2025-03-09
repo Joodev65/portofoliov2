@@ -3,38 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose Photobooth!</title>
+    <title>JooLink - Upload File</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>📸 Jose Photobooth! 💖</h1>
-        <video id="camera" autoplay></video>
-        <button id="capture">📷 Photo</button>
-        <div class="photo-container">
-            <h3>Foto Tersimpan:</h3>
-            <div id="photo-list"></div>
-        </div>
-        <div class="options">
-            <h3>Pilih Bingkai</h3>
-            <div class="frames">
-                <button class="frame-btn" data-color="pink">Pink</button>
-                <button class="frame-btn" data-color="blue">Biru</button>
-                <button class="frame-btn" data-color="purple">Ungu</button>
-            </div>
-            <h3>Pilih Bentuk</h3>
-            <div class="shapes">
-                <button class="shape-btn" data-shape="heart">❤️ Love</button>
-                <button class="shape-btn" data-shape="circle">🔵 Bulat</button>
-            </div>
-            <h3>Pilih Filter</h3>
-            <div class="filters">
-                <button class="filter-btn" data-filter="softpink">Soft Pink</button>
-                <button class="filter-btn" data-filter="vintage">Vintage</button>
-            </div>
-            <button id="save">💾 Simpan Foto</button>
-        </div>
+        <h1>JooLink</h1>
+        <p>Upload file & dapatkan link unik</p>
+        
+        <label class="upload-box">
+            <input type="file" id="fileInput">
+            <span>Pilih File</span>
+        </label>
+        
+        <progress id="progressBar" value="0" max="100"></progress>
+        
+        <button id="uploadBtn">Upload</button>
+        <p id="linkOutput"></p>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
