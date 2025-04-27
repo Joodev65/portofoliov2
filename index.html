@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JooCloudID V5 - Add User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            margin: 0 auto;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Add User to JooCloudID V5</h2>
+        <input type="text" id="userNumber" placeholder="Enter Phone Number" required>
+        <button onclick="addUser()">Add User</button>
+        <p id="response"></p>
+    </div>
+
+    <script>
+        function addUser() {
+            const userNumber = document.getElementById("userNumber").value;
+
+            if(userNumber === "") {
+                alert("Please enter a phone number!");
+                return;
+            }
+
+            fetch('/add-user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ phoneNumber: userNumber })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("response").textContent = "User Added Successfully!";
+                } else {
+                    document.getElementById("response").textContent = "Error: " + data.message;
+                }
+            })
+            .catch(error => {
+                document.getElementById("response").textContent = "Error: " + error.message;
+            });
+        }
+    </script>
+
+</body>
+</html>
