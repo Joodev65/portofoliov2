@@ -1,0 +1,32 @@
+{
+    "name": "YuniAI - Advanced AI Assistant",
+    "short_name": "YuniAI",
+    "description": "Your intelligent AI assistant for conversations and image generation",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0ea5e9",
+    "orientation": "portrait-primary",
+    "categories": ["productivity", "utilities", "lifestyle"],
+    "lang": "id",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5' stroke='%230ea5e9' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5' stroke='%230ea5e9' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+            "sizes": "512x512",
+            "type": "image/svg+xml"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "data:image/svg+xml,%3Csvg viewBox='0 0 400 600' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='600' fill='%23f8fafc'/%3E%3Ctext x='200' y='300' text-anchor='middle' font-family='Inter' font-size='24' fill='%230f172a'%3EYuniAI%3C/text%3E%3C/svg%3E",
+            "sizes": "400x600",
+            "type": "image/svg+xml",
+            "form_factor": "narrow"
+        }
+    ]
+}
